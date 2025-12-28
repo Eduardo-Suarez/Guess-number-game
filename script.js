@@ -36,7 +36,10 @@ check.addEventListener('click', function() {
         message.textContent = 'Congrats, you find the correct number!!!';
         message.style.color = 'white'
         message.style.fontSize = '25px'
-        highScore.textContent = score.textContent;
+        if (score.textContent > highScore.textContent){
+            highScore.textContent = score.textContent;
+        }
+        
         document.querySelector('body').style.backgroundColor = 'green'
         console.log('le atinaste')
     //When players is too low
@@ -54,6 +57,7 @@ again.addEventListener('click' , function () {
     //Generate a new number
     randomNumber = Math.floor(Math.random() * 20) + 1;
 
+    //Reset the background
     document.querySelector('body').style.backgroundColor = "#222";
 
     //Reset score
